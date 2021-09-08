@@ -29,7 +29,7 @@ export const tokenLink = setContext((_, context) => {
     ...context,
     headers: {
       ...context.headers,
-      "Authorization-Bearer": authToken || null
+      ...(authToken && {"Authorization-Bearer": authToken})
     }
   };
 });
